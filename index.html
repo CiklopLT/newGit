@@ -19,7 +19,7 @@
   	}
 	</style>
 
-	<title>&nbsp;</title>
+	<title>POGO totalizatorius</title>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,11 +33,11 @@
 	
 	<div id="tableContainer-1">
   	<div id="tableContainer-2">
-	    <table id="myTable" border="0">
-	      <tr><td id="changeable">&nbsp;</td><td>&nbsp;</td></tr>
-	      <tr><td>Vardas:</td><td><input type="text"  /></td></tr>
-      	      <tr><td>Slaptažodis:</td><td><input type="password"  /></td></tr>
-    	    </table>
+	    <table id="myTable" border="1">
+            <tr><td>Vardas:</td><td><input id="user" type="text"  /></td></tr>
+     	    <tr><td>Slaptažodis:</td><td><input id="pass" type="password"  /></td></tr>
+            <tr><td colspan="2" align="center"><input id="signin" type="button" value="Prisijungti"/></td></tr>
+            </table>
   	</div>
 	</div>
 	
@@ -45,7 +45,14 @@
 </html>
 
 <script>
-	$.post( "http://pogo.lt/total/data.php" ).done (function( data ) { 
-		$("#changeable").text(data);	
+	$("#signin").click(function() {
+	
+	var user = $("#user").val();
+	var pass = $("#pass").val();
+	
+	$.post( "http://pogo.lt/total/data.php" , {user: user, pass: pass} ).done (function( data ) { 
+		alert(data);	
 	});
+
+	});	
 </script>
