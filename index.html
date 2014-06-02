@@ -11,11 +11,13 @@
 		<script type="text/javascript" charset="utf-8" src="cordova/cordova.js"></script>
 	</head>
 	<body>
+	<span id="changeable">Spanas</span>
 	</body>
 </html>
 
 <script>
 	
-	alert ("kazka");
-	
+	$.post( "data.php" ).done (function( data ) { 
+		$("#changeable").text(data);	
+	}
 </script>
