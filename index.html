@@ -11,26 +11,14 @@
 		<script type="text/javascript" charset="utf-8" src="cordova/cordova.js"></script>
 	</head>
 	<body>
-		<!-- Start of first page I -->
-		<div data-role="page" id="page1">
-			<!-- Header -->
-			<div data-role="header">
-				<h1>Phonegap Template &amp;</h1>
+		<?php 
+			include("connectDB.php");
 
-			</div>
-			<!-- /header -->
-			<!-- Content    -->
-			<div data-role="content">
-				First App in PhoneGap
-			</div>
-			<!-- /content -->
-			<!-- footer -->
-			<div data-role="footer">
-				<h4>&copy; 2013 Your Name</h4>
-			</div>
-			<!-- /footer -->
-		</div>
-		<!-- /page -->
-
+			$query = "SELECT Slapyvardis FROM totalizatorius WHERE Vardas = 'Jonas'";
+			$seek = mysql_query($query) or die(mysql_error());
+			$row = mysql_fetch_array($seek);
+	
+			echo $row[0];
+		?>
 	</body>
 </html>
