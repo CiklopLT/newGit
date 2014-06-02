@@ -12,6 +12,7 @@
 	</head>
 	<body>
 	<span id="changeable">Spanas</span>
+	<span>Kitas spanas</span>
 	</body>
 </html>
 
@@ -19,5 +20,5 @@
 	
 	$.post( "data.php" ).done (function( data ) { 
 		$("#changeable").text(data);	
-	}
+	});
 </script>
