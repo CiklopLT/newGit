@@ -33,11 +33,11 @@
 	
 	<div id="tableContainer-1">
   	<div id="tableContainer-2">
-	    <table id="myTable" border="1">
-            <tr><td>Vardas:</td><td><input id="user" type="text"  /></td></tr>
-     	    <tr><td>Slaptažodis:</td><td><input id="pass" type="password"  /></td></tr>
-            <tr><td colspan="2" align="center"><input id="signin" type="button" value="Prisijungti"/></td></tr>
-            </table>
+	    <table id="myTable" border="0">
+      <tr><td>Vardas:</td><td><input id="user" type="text"  /></td></tr>
+      <tr><td>Slaptažodis:</td><td><input id="pass" type="password"  /></td></tr>
+      <tr><td colspan="2" align="center"><input id="signin" type="button" value="Prisijungti" /><input id="register" type="button" value="Registruotis"/></td></tr>
+    </table>
   	</div>
 	</div>
 	
@@ -54,5 +54,11 @@
 		alert(data);	
 	});
 
-	});	
+	});
+	
+	$("#register").click(function() {
+	
+	window.location = "register.html";
+
+});	
 </script>
