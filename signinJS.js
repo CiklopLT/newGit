@@ -1,13 +1,5 @@
 $("#signin_btn").click(function() {
 	
-	click_time = new Date().getTime();
-    	if (click_time && (click_time - last_click_time) < 1000) {
-    	alert ("kazka");
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        return false;
-    	}
-    	last_click_time = click_time;
 	
 	var user = $("#user_signin").val();
 	var pass = $("#pass_signin").val();
