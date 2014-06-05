@@ -1,3 +1,11 @@
+function onBodyLoad()
+{       
+    document.addEventListener("deviceready", onDeviceReady, false);
+}function onDeviceReady()
+{
+    alert("Cordova is working")
+
+
 $("#signin_btn").mousedown(function() {
 
 	var user = $("#user_signin").val();
@@ -84,4 +92,4 @@ $("#back_bets").click(function() {
 	$("#submitbet").show();  
 	});			
 
- 
+}
