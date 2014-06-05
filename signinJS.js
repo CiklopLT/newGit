@@ -1,6 +1,4 @@
-$("#signin_btn").click(function() {
-	
-	
+$("#signin_btn").on({ 'touchstart' : function(){ /* do something... */ 	
 	var user = $("#user_signin").val();
 	var pass = $("#pass_signin").val();
 	window.user = user;
@@ -52,7 +50,7 @@ $("#signin_btn").click(function() {
 	
 
 
-});	
+} });	
 
 
 
