@@ -22,7 +22,7 @@
   .flag {
 	width: 25px;
 	height: 15px;
-	background:url(flags1.png) no-repeat
+	background:url("http://pogo.lt/brasil2014/flags1.png") no-repeat
 }
 
 .flag.flag-ad {background-position: -25px 0}
