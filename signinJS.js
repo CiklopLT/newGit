@@ -4,7 +4,7 @@ function onBodyLoad() {
 
    function onDeviceReady() {
       $(function() {
-         // Do your stuff here, binding to elements, etc
+         alert("smth");
    
  
 	
