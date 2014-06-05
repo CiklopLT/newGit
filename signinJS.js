@@ -1,4 +1,4 @@
-$("#signin").click(function() {
+$("#signin_btn").click(function() {
 	
 	var user = $("#user_signin").val();
 	var pass = $("#pass_signin").val();
@@ -24,7 +24,6 @@ $("#signin").click(function() {
 		
 	$("#represent_part tr:last").after("<tr align='center'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
-	
 });	
 //--------------------Dienos statistikos pildymo pabaiga------------------------------------
 
@@ -48,7 +47,7 @@ $("#signin").click(function() {
 		else {alert("Neteisingi prisijungimo duomenys");}	
 	});
 	}
-	
+	else {alert("Neteisingi prisijungimo duomenys");}
 	
 
 
