@@ -1,7 +1,5 @@
 $("#signin_btn").on({ 'touchstart' : function(){ /* do something... */ 	
 
-	alert("Daryk kartą");
-	
 	var user = $("#user_signin").val();
 	var pass = $("#pass_signin").val();
 	window.user = user;
