@@ -4,6 +4,7 @@ function onBodyLoad()
 }function onDeviceReady()
 {
 
+/*
 	form = $("#main");
 
     $("#main").validate({ 
@@ -61,7 +62,7 @@ function onBodyLoad()
 		
     });
 
-
+*/
 
 $("#signin_btn").mousedown(function() {
 
