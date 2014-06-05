@@ -12,7 +12,7 @@
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	</head>
-	<body>
+	<body onload="onBodyLoad()">
 <div id="tableContainer-1">
   <div id="tableContainer-2">
 	
@@ -122,6 +122,13 @@ var today = yyyy + '-' + mm + '-' + dd;
 var today = "2014-06-13";
 window.today = today;
 
+function onBodyLoad()
+{       
+    document.addEventListener("deviceready", onDeviceReady, false);
+}function onDeviceReady()
+{
+    alert("Cordova is working")
+}
 
 </script>
 
