@@ -1,13 +1,3 @@
-function onBodyLoad() {
-      document.addEventListener("deviceready", onDeviceReady, false);
-   }
-
-   function onDeviceReady() {
-      $(function() {
-         alert("smth");
-   
- 
-	
 $("#signin_btn").click(function() {
 
 	var user = $("#user_signin").val();
@@ -94,5 +84,4 @@ $("#back_bets").click(function() {
 	$("#submitbet").show();  
 	});			
 
-   });
-   }
+ 
