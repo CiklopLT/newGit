@@ -1,4 +1,4 @@
-$("#signin_btn").click(function() {
+$("#signin_btn").mousedown(function() {
 
 	var user = $("#user_signin").val();
 	var pass = $("#pass_signin").val();
