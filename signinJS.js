@@ -1,4 +1,9 @@
-$("#signin_btn").on({ 'touchstart' : function(){ /* do something... */ 	
+document.addEventListener("deviceready", onDeviceReady, false);
+
+    
+function onDeviceReady() {
+	
+$("#signin_btn").click(function() {
 
 	var user = $("#user_signin").val();
 	var pass = $("#pass_signin").val();
@@ -50,8 +55,7 @@ $("#signin_btn").on({ 'touchstart' : function(){ /* do something... */
 	else {alert("Neteisingi prisijungimo duomenys");}
 	
 
-
-} });	
+});	
 
 
 
@@ -84,3 +88,5 @@ $("#back_bets").click(function() {
 	$("#userbets").hide();
 	$("#submitbet").show();  
 	});			
+
+}
