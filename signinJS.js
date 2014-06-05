@@ -209,7 +209,9 @@ form = $("#main");
 
         submitHandler: function ( form ) { 
            $.post( "http://pogo.lt/total/new_reg.php" , $("#main").serialize()).done (function( data ) { 
-           	alert (data);
+           	
+           	if (data == ""){alert (Sėkmingai prisiregistravote); location.reload();}
+           	
 		});
         }
 
