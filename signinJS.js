@@ -1,7 +1,7 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-
-    
-function onDeviceReady() {
+ document.addEventListener("deviceready", function(){
+      
+      alert("123");
+ 
 	
 $("#signin_btn").click(function() {
 
@@ -89,4 +89,4 @@ $("#back_bets").click(function() {
 	$("#submitbet").show();  
 	});			
 
-}
+},true);
