@@ -130,19 +130,21 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 	
 	for (var i = 0; i < matches['team1'].length; i++)
 	{
-		if (matches['result1'][i] == "30") {tempResult1 = "<select id='result1" + i + "'>" + select_result; tempButton = "<td><input type='button' class='bet_btn'  id='bet" + i + "' value='Pateikti spėjimą' /></td>"} else { tempResult1 = matches['result1'][i]; tempButton = "<td>&nbsp;</td>"}
+		if (matches['result1'][i] == "30") {tempResult1 = "<select id='result1" + i + "'>" + select_result; tempButton = "<input type='button' class='bet_btn'  id='bet" + i + "' value='Pateikti spėjimą' />"} else { tempResult1 = matches['result1'][i]; tempButton = "Jau spėta"}
 		
 		if (matches['result2'][i] == "30") {tempResult2 = "<select id='result2" + i + "'>" + select_result} else { tempResult2 = matches['result2'][i];}
 		
-			$("#represent_bets").append("<tr><table width='100%'>" +
-		"<tr><td><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
-		"<td align='center' rowspan='2'>" + tempResult1 +"</td>" +
-		"<td align='center' rowspan='2'>" + tempResult2 +"</td>" +
-		"<td align='left'><img class='flag flag-" + matches['flag2'][i] +"' /></td>" +
-		"<td rowspan='2'>" + tempButton + "</td></tr>" +
-		"<tr><td id='team1" + i + "'>" + matches['team1'][i] +"</td>" +
-		"<td id='team2" + i + "'>" + matches['team2'][i] +"</td>" +
+		$("#represent_bets").append("<tr><table width='100%'>" +
+		"<tr><td valign='bottom'><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
+		"<td rowspan='2' valign='center' align='center' >" + tempResult1 +"</td>" +
+		"<td rowspan='2' valign='center' align='center' >" + tempResult2 +"</td>" +
+		"<td align='left' valign='bottom'><img class='flag flag-" + matches['flag2'][i] +"' /></td>" +
+		"<td rowspan='2' valign='center'>" + tempButton + "</td></tr>" +
+		"<tr><td id='team1" + i + "' valign='top'>" + matches['team1'][i] +"</td>" +
+		"<td id='team2" + i + "' valign='top'>" + matches['team2'][i] +"</td>" +
 		"</table></tr>");
+		
+		$("#represent_bets").append("<tr><td>&nbsp;</td></tr>");
 	}
 	
 	
