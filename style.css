@@ -1,6 +1,15 @@
-  html, body {
+  #main {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	color:#FFF;
 	background-color:#036;
   }
+  
   #tableContainer {
 	font-family: 'Open Sans', sans-serif;
 	font-size:14px;
