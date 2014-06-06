@@ -3,12 +3,12 @@ function onBodyLoad()
     document.addEventListener("deviceready", onDeviceReady, false);
 }function onDeviceReady()
 {
-	/*
+	
 	document.addEventListener("offline", yourCallbackFunction, false);
 	function onOffline() {
     		alert ("Reikalinga interneto prieiga");
-	}*/
-	
+	}
+
 $("#signin_btn").mousedown(function() {
 
 	var user = $("#user_signin").val();
@@ -223,7 +223,7 @@ form = $("#main");
         submitHandler: function ( form ) { 
            $.post( "http://pogo.lt/total/new_reg.php" , $("#main").serialize()).done (function( data ) { 
            	
-           	if (data == ""){alert (Sėkmingai prisiregistravote); location.reload();}
+           	if (data == ""){alert ("Sėkmingai prisiregistravote"); location.reload();}
            	
 		});
         }
