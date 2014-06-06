@@ -129,7 +129,15 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 		
 		if (matches['result2'][i] == "30") {tempResult2 = "<select id='result2" + i + "'>" + select_result} else { tempResult2 = matches['result2'][i];}
 		
-		$("#represent_bets").append("<tr><td align='right'><img class='flag flag-" + matches['flag1'][i] +"' /></td><td id='team1" + i + "'>" + matches['team1'][i] +"</td><td align='center'>" + tempResult1 +"</td><td align='center'>" + tempResult2 +"</td><td id='team2" + i + "'>" + matches['team2'][i] +"<td align='left'><img class='flag flag-" + matches['flag2'][i] +"' /></td></td>" + tempButton + "</tr>");
+			$("#represent_bets").append("<tr><table width='100%'>" +
+		"<tr><td><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
+		"<td align='center' rowspan='2'>" + tempResult1 +"</td>" +
+		"<td align='center' rowspan='2'>" + tempResult2 +"</td>" +
+		"<td align='left'><img class='flag flag-" + matches['flag2'][i] +"' /></td>" +
+		"<td rowspan='2'>" + tempButton + "</td></tr>" +
+		"<tr><td id='team1" + i + "'>" + matches['team1'][i] +"</td>" +
+		"<td id='team2" + i + "'>" + matches['team2'][i] +"</td>" +
+		"</table></tr>");
 	}
 	
 	
