@@ -3,6 +3,10 @@ function onBodyLoad()
     document.addEventListener("deviceready", onDeviceReady, false);
 }function onDeviceReady()
 {
+	document.addEventListener("offline", yourCallbackFunction, false);
+	function onOffline() {
+    		alert ("Reikalinga interneto prieiga");
+	}
 
 $("#signin_btn").mousedown(function() {
 
