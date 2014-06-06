@@ -13,6 +13,10 @@
   }
   .centered {
     margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size:14px;
+    color:#FFF;
+    background-color:#036;
   }
   
   #submitbet, #register, #userbets, #day_stats, #total_stats {
