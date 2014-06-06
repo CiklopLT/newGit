@@ -1,24 +1,18 @@
   html, body {
-    background-color:#036;
+	background-color:#036;
   }
-  #tableContainer-1 {
-    height: 100%;
-    width: 100%;
-    display: table;
-    background-color:#036;
+  #tableContainer {
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	color:#FFF;
+	background-color:#036;
   }
-  #tableContainer-2 {
-    vertical-align: middle;
-    display: table-cell;
-    height: 100%;
-    background-color:#036;
-  }
+
   .centered {
-    margin: 0 auto;
-    font-family: 'Open Sans', sans-serif;
-    font-size:14px;
-    color:#FFF;
-    background-color:#036;
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	color:#FFF;
+	background-color:#036;
   }
   
   #submitbet, #register, #userbets, #day_stats, #total_stats {
