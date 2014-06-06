@@ -5,6 +5,7 @@
     height: 100%;
     width: 100%;
     display: table;
+    background-color:#036;
   }
   #tableContainer-2 {
     vertical-align: middle;
