@@ -11,6 +11,7 @@
     vertical-align: middle;
     display: table-cell;
     height: 100%;
+    background-color:#036;
   }
   .centered {
     margin: 0 auto;
