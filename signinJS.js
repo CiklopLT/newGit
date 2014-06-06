@@ -42,10 +42,10 @@ $("#signin_btn").mousedown(function() {
 	
 	for (var i = 0; i < part['user'].length; i++)
 	{
-		if (part['user'][i] == window.user) {var bgcolor = "bgcolor='#E6E6E6'";}
-		else {var bgcolor = "bgcolor='#FFF'";}
+		if (part['user'][i] == window.user) {var bgcolor = "bgcolor='#00FFFF'";}
+		else {var bgcolor = "bgcolor='#E6E6E6'";}
 		
-	$("#represent_part tr:last").after("<tr align='center'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
+	$("#represent_part tr:last").after("<tr align='center' style='color:#333333'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
 });	
 //--------------------Dienos statistikos pildymo pabaiga------------------------------------
@@ -58,10 +58,10 @@ $("#signin_btn").mousedown(function() {
 	
 	for (var i = 0; i < part['user'].length; i++)
 	{
-		if (part['user'][i] == window.user) {var bgcolor = "bgcolor='#E6E6E6'";}
-		else {var bgcolor = "bgcolor='#FFF'";}
+		if (part['user'][i] == window.user) {var bgcolor = "bgcolor='#00FFFF'";}
+		else {var bgcolor = "bgcolor='#E6E6E6'";}
 		
-	$("#represent_part_all tr:last").after("<tr align='center'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
+	$("#represent_part_all tr:last").after("<tr align='center' style='color:#333333'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
 	
 });	
@@ -133,6 +133,7 @@ $("#bet").click(function() {
 	$.post( "http://pogo.lt/total/daycode.php" , {date: today, code: code} ).done (function( data ) { 
 		if (data == "ALLOWED") {
 			
+	$("#represent_bets").empty();	
 			
 $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.user}).done (function( data ) { 
 
