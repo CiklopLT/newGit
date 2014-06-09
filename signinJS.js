@@ -9,8 +9,6 @@ function onBodyLoad()
     		alert ("Reikalinga interneto prieiga");
 	}*/
 
-var deviceID = device.uuid;
-alert (deviceID);
 	
 jQuery.fn.center = function () {
     this.css("position","absolute");
@@ -247,5 +245,13 @@ form = $("#main_form");
         }
 
     });
+    
+var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';    
 
 }
