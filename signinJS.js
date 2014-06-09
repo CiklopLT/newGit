@@ -249,7 +249,12 @@ form = $("#main_form");
 
 $.post( "http://pogo.lt/total/uuid.php" , {uuid: device.uuid}).done (function( data ) { 
            	
-           	alert(data)
+           	var userpass = jQuery.parseJSON( data );
+           	
+           	if (userpass['user'] != ""){
+           	$("#user_signin").val(userpass['user'] );
+           	$("#pass_signin").val(userpass['pass'] );
+           	}
            	
 		});    
    
