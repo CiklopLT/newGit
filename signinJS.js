@@ -8,6 +8,9 @@ function onBodyLoad()
 	function onOffline() {
     		alert ("Reikalinga interneto prieiga");
 	}*/
+
+var deviceID = device.uuid;
+alert (deviceID);
 	
 jQuery.fn.center = function () {
     this.css("position","absolute");
