@@ -237,8 +237,11 @@ form = $("#main_form");
   			},
 
         submitHandler: function ( form ) { 
-           $.post( "http://pogo.lt/total/new_reg.php" , $("#main_form").serialize()).done (function( data ) { 
-           	
+        	var formData = $( "#main_form").serializeArray();
+		formData.push({ name: "uuid", value: device.uuid });
+        	
+           $.post( "http://pogo.lt/total/new_reg.php" , formData ).done (function( data ) { 
+           	  
            	if (data == ""){alert ("Sėkmingai prisiregistravote"); location.reload();}
            	
 		});
