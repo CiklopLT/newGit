@@ -185,9 +185,9 @@ var matchcode = $("#team1" + id).html() + $("#team2" + id).html();
 });	
 
 
-form = $("#main");
+form = $("#main_form");
 
-    $("#main").validate({ 
+    $("#main_form").validate({ 
         rules: {
             user: {
                 required: true
@@ -236,7 +236,7 @@ form = $("#main");
   			},
 
         submitHandler: function ( form ) { 
-           $.post( "http://pogo.lt/total/new_reg.php" , $("#main").serialize()).done (function( data ) { 
+           $.post( "http://pogo.lt/total/new_reg.php" , $("#main_form").serialize()).done (function( data ) { 
            	
            	if (data == ""){alert ("Sėkmingai prisiregistravote"); location.reload();}
            	
