@@ -167,7 +167,7 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult1 +"</td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult2 +"</td>" +
 		"<td align='left' valign='bottom' width='10%'><img class='flag flag-" + matches['flag2'][i] +"' /></td>" +
-		"<td rowspan='2' valign='center' align='center' width='30%'>" + tempButton + "</td><td width='20%'>&nbsp;</td></tr>" +
+		"<td rowspan='2' valign='center' align='center' width='40%'>" + tempButton + "</td><td width='10%'>&nbsp;</td></tr>" +
 		"<tr><td id='team1" + i + "' valign='top'>" + matches['team1'][i] +"</td>" +
 		"<td id='team2" + i + "' valign='top'>" + matches['team2'][i] +"</td>" +
 		"</table></tr>");
