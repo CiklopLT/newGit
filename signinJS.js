@@ -241,7 +241,6 @@ form = $("#main_form");
            $.post( "http://pogo.lt/total/new_reg.php" , formData ).done (function( data ) { 
            	alert (data); 
            	location.reload();
-           	}
            	
 		});
         }
