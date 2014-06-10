@@ -24,6 +24,9 @@
 	background-color:#036;
   }
   
+  .bet_btn{
+  	text-decoration:underline;
+  }
 
   
   #submitbet, #register, #userbets, #day_stats, #total_stats {
