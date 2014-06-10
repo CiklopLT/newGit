@@ -169,7 +169,7 @@ var result2 = $("#result2" + id).val();
 var matchcode = $("#team1" + id).html() + $("#team2" + id).html();
 
  $.post( "http://pogo.lt/total/bets.php" , {result1: result1, result2: result2, id: id, today: window.today, user: window.user, matchcode: matchcode}).done (function( ) { 
- $("#bet").click;
+ $("#bet").click();
 		});
 });
 
