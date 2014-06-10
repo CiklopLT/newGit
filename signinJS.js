@@ -45,7 +45,10 @@ $("#signin_btn").mousedown(function() {
 
 //-------------------Užpildoma dienos statistika--------------------------------------------------
 function day_stats() {
-
+	
+	$("#represent_part").empty();	
+	$("#represent_part").append("<tr><td colspan='5'><span style='font-size:16px'>Dienos rezultatų lentelė</span></td><td width='10%'>&nbsp;</td></tr><tr><td colspan='4'>&nbsp;</td></tr><tr><th>Dalyvis&nbsp;</th><th>&nbsp;Tiksliai&nbsp;</th><th>&nbsp;Baigtis&nbsp;</th><th>&nbsp;Skirtumas&nbsp;</th><th>&nbsp;Dienos taškai&nbsp;</th></tr>");
+	
 	$.post( "http://pogo.lt/total/part.php" , {today: window.today}).done (function( data ) { 
 	
 	var part = jQuery.parseJSON( data );
@@ -64,6 +67,10 @@ function day_stats() {
 
 //-------------------Užpildoma bendra statistika--------------------------------------------------
 function all_stats() {
+	$("#represent_part_all").empty();	
+	$("#represent_part_all").append("<tr><td colspan='5'><span style='font-size:16px'>Bendra rezultatų lentelė</span></td><td width='10%'>&nbsp;</td></tr><tr><td colspan='4'>&nbsp;</td></tr><tr><th>Dalyvis&nbsp;</th><th>&nbsp;Tiksliai&nbsp;</th><th>&nbsp;Baigtis&nbsp;</th><th>&nbsp;Skirtumas&nbsp;</th><th>&nbsp;Visi taškai&nbsp;</th></tr>");
+	
+	
 	$.post( "http://pogo.lt/total/part.php" , {today: "ALL"}).done (function( data ) { 
 	
 	var part = jQuery.parseJSON( data );
