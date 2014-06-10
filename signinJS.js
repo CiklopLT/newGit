@@ -150,6 +150,7 @@ $("#bet").click(function() {
 			
 	$("#represent_bets").empty();	
 	$("#represent_bets").append("<tr><td colspan='5'><table width='100%'><tr align='center'><td width='20%'><img src='http://pogo.lt/brasil2014/logo.fw.png' width='46' height='23'/></td><td width='60%'>Pogo Totalizatorius</td><td width='20%'><img src='http://pogo.lt/brasil2014/logo_brasil.fw.png' width='46' height='23'/></td></tr></table></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>");		
+
 $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.user}).done (function( data ) { 
 
 	var select_result = "<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option><option value='17'>17</option><option value='18'>18</option><option value='19'>19</option><option value='20'>20</option></select>";
@@ -163,8 +164,8 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 		if (matches['result2'][i] == "30") {tempResult2 = "<select id='result2" + i + "'>" + select_result} else { tempResult2 = matches['result2'][i];}
 		
 		$("#represent_bets").append("<tr><table width='100%'>" +
-		"<tr><td rowspan='2' valign='bottom' width='10%'>" + matches['time'][i] + "</td></tr>" +
-		"<tr><td valign='bottom' width='10%'><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
+		"<tr><td rowspan='2' valign='center' width='10%'>" + matches['time'][i] + "</td>" +
+		"<td valign='bottom' width='10%'><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult1 +"</td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult2 +"</td>" +
 		"<td align='left' valign='bottom' width='10%'><img class='flag flag-" + matches['flag2'][i] +"' /></td>" +
