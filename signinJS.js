@@ -32,8 +32,20 @@ $("#signin_btn").mousedown(function() {
 			$("#userspan").text(window.user);  
 			$("#submitbet").show();
 			
-			
+			day_stats();
+			all_stats();
+			}
+		else {alert("Neteisingi prisijungimo duomenys");}	
+	});
+	}
+	else {alert("Neteisingi prisijungimo duomenys");}
+	
+
+});	
+
 //-------------------Užpildoma dienos statistika--------------------------------------------------
+function day_stats() {
+
 	$.post( "http://pogo.lt/total/part.php" , {today: window.today}).done (function( data ) { 
 	
 	var part = jQuery.parseJSON( data );
@@ -45,11 +57,13 @@ $("#signin_btn").mousedown(function() {
 	
 	$("#represent_part tr:last").after("<tr align='center' style='color:#333333'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
-});	
+});
+}
 //--------------------Dienos statistikos pildymo pabaiga------------------------------------
 
 
 //-------------------Užpildoma bendra statistika--------------------------------------------------
+function all_stats() {
 	$.post( "http://pogo.lt/total/part.php" , {today: "ALL"}).done (function( data ) { 
 	
 	var part = jQuery.parseJSON( data );
@@ -62,16 +76,9 @@ $("#signin_btn").mousedown(function() {
 	$("#represent_part_all tr:last").after("<tr align='center' style='color:#333333'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
 	
-});	
-//--------------------Bendros statistikos pildymo pabaiga------------------------------------			
-			}
-		else {alert("Neteisingi prisijungimo duomenys");}	
-	});
-	}
-	else {alert("Neteisingi prisijungimo duomenys");}
-	
-
-});	
+});
+}
+//--------------------Bendros statistikos pildymo pabaiga------------------------------------	
 
 
 
@@ -84,6 +91,7 @@ $("#register_btn").click(function() {
 $("#day_stats_btn").click(function() {
 	$("#submitbet").hide();  
 	$("#day_stats").show();
+	day_stats();
 	});
 
 $("#back_day").click(function() {
@@ -94,6 +102,7 @@ $("#back_day").click(function() {
 $("#total_stats_btn").click(function() {
 	$("#submitbet").hide();  
 	$("#total_stats").show();
+	all_stats();
 	});
 
 $("#back_total").click(function() {
@@ -103,7 +112,7 @@ $("#back_total").click(function() {
 	
 $("#back_bets").click(function() {
 	$("#userbets").hide();
-	$("#submitbet").show(); 
+	$("#submitbet").show();
 	});			
 
 
