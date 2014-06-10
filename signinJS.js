@@ -42,7 +42,7 @@ $("#signin_btn").mousedown(function() {
 	{
 		if (part['user'][i] == window.user) {var bgcolor = "bgcolor='#00FFFF'";}
 		else {var bgcolor = "bgcolor='#E6E6E6'";}
-		
+	
 	$("#represent_part tr:last").after("<tr align='center' style='color:#333333'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
 });	
@@ -133,7 +133,7 @@ $("#bet").click(function() {
 		if (data == "ALLOWED") {
 			
 	$("#represent_bets").empty();	
-			
+	$("#represent_bets").append("<tr><td colspan='5'><table width='100%'><tr align='center'><td width='20%'><img src='http://pogo.lt/brasil2014/logo.fw.png' width='46' height='23'/></td><td width='60%'>Pogo Totalizatorius</td><td width='20%'><img src='http://pogo.lt/brasil2014/logo_brasil.fw.png' width='46' height='23'/></td></tr></table></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>");		
 $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.user}).done (function( data ) { 
 
 	var select_result = "<option value='0'>0</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option><option value='6'>6</option><option value='7'>7</option><option value='8'>8</option><option value='9'>9</option><option value='10'>10</option><option value='11'>11</option><option value='12'>12</option><option value='13'>13</option><option value='14'>14</option><option value='15'>15</option><option value='16'>16</option><option value='17'>17</option><option value='18'>18</option><option value='19'>19</option><option value='20'>20</option></select>";
@@ -239,8 +239,9 @@ form = $("#main_form");
 		formData.push({ name: "uuid", value: device.uuid });
         	
            $.post( "http://pogo.lt/total/new_reg.php" , formData ).done (function( data ) { 
-           	  
-           	if (data == ""){alert ("Sėkmingai prisiregistravote"); location.reload();}
+           	alert (data); 
+           	location.reload();
+           	}
            	
 		});
         }
