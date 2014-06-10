@@ -163,7 +163,7 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 		if (matches['result2'][i] == "30") {tempResult2 = "<select id='result2" + i + "'>" + select_result} else { tempResult2 = matches['result2'][i];}
 		
 		$("#represent_bets").append("<tr><table width='100%'>" +
-		"<tr><td valign='bottom' width='10%'> + matches['time'][i] +</td>" +
+		"<tr><td rowspan='2' valign='bottom' width='10%'>" + matches['time'][i] + "</td></tr>" +
 		"<tr><td valign='bottom' width='10%'><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult1 +"</td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult2 +"</td>" +
