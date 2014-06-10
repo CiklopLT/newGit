@@ -149,7 +149,7 @@ $("#bet").click(function() {
 		if (data == "ALLOWED") {
 			
 	$("#represent_bets").empty();	
-	$("#represent_bets").append("<tr><td colspan='5'><table width='100%'><tr align='center'><td width='20%'><img src='http://pogo.lt/brasil2014/logo.fw.png' width='46' height='23'/></td><td width='60%'>Pogo Totalizatorius</td><td width='20%'><img src='http://pogo.lt/brasil2014/logo_brasil.fw.png' width='46' height='23'/></td></tr></table></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>");		
+	$("#represent_bets").append("<tr><td colspan='6'><table width='100%'><tr align='center'><td width='20%'><img src='http://pogo.lt/brasil2014/logo.fw.png' width='46' height='23'/></td><td width='60%'>Pogo Totalizatorius</td><td width='20%'><img src='http://pogo.lt/brasil2014/logo_brasil.fw.png' width='46' height='23'/></td></tr></table></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>");		
 
 $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.user}).done (function( data ) { 
 
