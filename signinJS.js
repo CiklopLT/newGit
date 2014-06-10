@@ -163,11 +163,12 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 		if (matches['result2'][i] == "30") {tempResult2 = "<select id='result2" + i + "'>" + select_result} else { tempResult2 = matches['result2'][i];}
 		
 		$("#represent_bets").append("<tr><table width='100%'>" +
+		"<tr><td valign='bottom' width='10%'> + matches['time'][i] +</td>" +
 		"<tr><td valign='bottom' width='10%'><img class='flag flag-" + matches['flag1'][i] +"' /></td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult1 +"</td>" +
 		"<td rowspan='2' valign='center' align='center' width='15%'>" + tempResult2 +"</td>" +
 		"<td align='left' valign='bottom' width='10%'><img class='flag flag-" + matches['flag2'][i] +"' /></td>" +
-		"<td rowspan='2' valign='center' align='center' width='40%'>" + tempButton + "</td><td width='10%'>&nbsp;</td></tr>" +
+		"<td rowspan='2' valign='center' align='center' width='30%'>" + tempButton + "</td><td width='10%'>&nbsp;</td></tr>" +
 		"<tr><td id='team1" + i + "' valign='top'>" + matches['team1'][i] +"</td>" +
 		"<td id='team2" + i + "' valign='top'>" + matches['team2'][i] +"</td>" +
 		"</table></tr>");
