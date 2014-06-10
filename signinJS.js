@@ -158,7 +158,7 @@ $.post( "http://pogo.lt/total/matches.php" , {today: window.today, user: window.
 	
 	for (var i = 0; i < matches['team1'].length; i++)
 	{
-		if (matches['result1'][i] == "30") {tempResult1 = "<select id='result1" + i + "'>" + select_result; tempButton = "<input type='button' class='bet_btn'  id='bet" + i + "' value='Pateikti spėjimą' />"} else { tempResult1 = matches['result1'][i]; tempButton = "Jau spėta"}
+		if (matches['result1'][i] == "30") {tempResult1 = "<select id='result1" + i + "'>" + select_result; tempButton = "<a class='bet_btn'  id='bet" + i + "'>Pateikti spėjimą</a>"} else { tempResult1 = matches['result1'][i]; tempButton = "Jau spėta"}
 		
 		if (matches['result2'][i] == "30") {tempResult2 = "<select id='result2" + i + "'>" + select_result} else { tempResult2 = matches['result2'][i];}
 		
