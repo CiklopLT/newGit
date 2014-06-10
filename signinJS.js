@@ -36,6 +36,7 @@ $("#signin_btn").mousedown(function() {
 			$("#userspan").text(window.user);  
 			$("#submitbet").show();
 			
+			
 //-------------------Užpildoma dienos statistika--------------------------------------------------
 	$.post( "http://pogo.lt/total/part.php" , {today: window.today}).done (function( data ) { 
 	
@@ -65,6 +66,7 @@ $("#signin_btn").mousedown(function() {
 	$("#represent_part_all tr:last").after("<tr align='center' style='color:#333333'" + bgcolor + "><td>" + part['user'][i] +"</td><td>" + part['correct'][i] +"</td><td>" + part['diff'][i] +"</td><td>" + part['end'][i] +"</td><td>" + part['total_pts'][i] + "</td></tr>");
 	}
 	
+	$("#tableContainer").center();
 });	
 //--------------------Bendros statistikos pildymo pabaiga------------------------------------			
 			}
@@ -81,31 +83,37 @@ $("#signin_btn").mousedown(function() {
 $("#register_btn").click(function() {
 	$("#signin").hide();  
 	$("#register").show();
+	$("#tableContainer").center();
 });	
 
 $("#day_stats_btn").click(function() {
 	$("#submitbet").hide();  
 	$("#day_stats").show();
+	$("#tableContainer").center();
 	});
 
 $("#back_day").click(function() {
 	$("#day_stats").hide();
 	$("#submitbet").show();  
+	$("#tableContainer").center();
 	});	
 	
 $("#total_stats_btn").click(function() {
 	$("#submitbet").hide();  
 	$("#total_stats").show();
+	$("#tableContainer").center();
 	});
 
 $("#back_total").click(function() {
 	$("#total_stats").hide();
-	$("#submitbet").show();  
+	$("#submitbet").show(); 
+	$("#tableContainer").center();
 	});	
 	
 $("#back_bets").click(function() {
 	$("#userbets").hide();
-	$("#submitbet").show();  
+	$("#submitbet").show(); 
+	$("#tableContainer").center();
 	});			
 
 
@@ -179,7 +187,8 @@ var matchcode = $("#team1" + id).html() + $("#team2" + id).html();
 });	
 					
 			$("#submitbet").hide();  
-			$("#userbets").show();}
+			$("#userbets").show();
+			$("#tableContainer").center();}
 		else {alert("Neteisingas dienos kodas!");}	
 	});
 
