@@ -4,10 +4,6 @@ function onBodyLoad()
 }function onDeviceReady()
 {
 	
-	document.addEventListener("offline", yourCallbackFunction, false);
-	function onOffline() {
-    		alert ("Reikalinga interneto prieiga");
-	}
 
 	
 jQuery.fn.center = function () {
