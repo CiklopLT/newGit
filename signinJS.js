@@ -235,10 +235,8 @@ form = $("#main_form");
   			},
 
         submitHandler: function ( form ) { 
-        	alert ("smth");
         	var formData = $( "#main_form").serializeArray();
 		formData.push({ name: "uuid", value: device.uuid });
-		alert(JSON.stringify(formData));
         	
            $.post( "http://pogo.lt/total/new_reg.php" , formData ).done (function( data ) { 
            	alert (data); 
