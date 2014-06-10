@@ -24,6 +24,13 @@
 	background-color:#036;
   }
   
+  .bet_btn {
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	color:#FFF;
+	background-color:#036;
+  }
+  
   #submitbet, #register, #userbets, #day_stats, #total_stats {
 	  display:none;
   }
