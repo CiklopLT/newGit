@@ -100,7 +100,18 @@
 
 <script>
 
-/*
+function yesterday(duration)
+{
+var date_yesterday = new Date();
+date_yesterday.setTime(date_yesterday.getTime() +  (duration * 24 * 60 * 60 * 1000));
+var ddy = date_yesterday.getDate();
+var mmy = date_yesterday.getMonth()+1; //January is 0!
+var yyyyy = date_yesterday.getFullYear();
+
+if(ddy<10){ddy='0'+ddy} if(mmy<10){mmy='0'+mmy} 
+return yyyyy + '-' + mmy + '-' + ddy;
+}
+
 var date_now = new Date();
 var dd = date_now.getDate();
 var mm = date_now.getMonth()+1; //January is 0!
@@ -108,11 +119,12 @@ var yyyy = date_now.getFullYear();
 
 if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} 
 var today = yyyy + '-' + mm + '-' + dd;
-*/
 
-var today = "2014-06-13";
+var hour = date_now.getHours();
+
+if (hour < 6) {today = yesterday(-1);}
+
 window.today = today;
-
 
 </script>
 
