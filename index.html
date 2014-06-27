@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="css/userCSS.css" />
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
+<title>Task</title>
+</head>
+
+<body onload="getPost()">
+
+<div class="well span8" id="centered">
+<h2>Lorem post</h2>
+<p style="text-align:justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a nisi a tortor rhoncus vulputate id sit amet enim. Vestibulum lobortis diam tortor, ac eleifend nunc laoreet sed. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam tincidunt at tellus at aliquam. Nullam ullamcorper in nibh id pellentesque. Duis luctus pulvinar odio non porta. Sed vel diam egestas, fermentum dolor vel, suscipit justo. Proin iaculis, arcu vel blandit convallis, tortor tortor tristique ante, et venenatis leo sapien sit amet ante. Praesent tincidunt hendrerit velit, non dictum mauris porta sit amet. Sed a lorem tempor, posuere mi vel, lobortis nulla. Nulla vulputate libero eget libero vehicula condimentum. Donec ipsum ante, pulvinar sit amet condimentum et, sollicitudin at est. Nunc volutpat tincidunt nisi, a ultrices tortor euismod ac. Phasellus id ligula aliquet, pulvinar diam ut, aliquam nulla</p>
+<p style="text-align:justify">Duis luctus ante justo, eget laoreet lacus fringilla eu. Quisque tellus felis, sollicitudin ac semper in, pretium nec arcu. Suspendisse tempus sem viverra augue tristique molestie. Morbi rhoncus fermentum dolor, at ornare tellus molestie quis. Sed pellentesque at justo sit amet fringilla. Aliquam convallis tincidunt arcu, non pharetra purus. Suspendisse potenti.</p>
+<hr>
+<h3>Komentarai</h3>
+<br />
+<table id="postTable">
+<tr>
+<td>&nbsp;</td>
+<td colspan="2">
+<form class="span6" id="post-form">
+<label><h5>Tavo komentaras:</h5></label>
+<label>Vardas</label>
+<input name="name" id="name" type="text" style='height:23px' class="span4" placeholder="Tavo vardas.."  />&nbsp;&nbsp;&nbsp;<div id="post-submit" class="btn btn-primary">Pateikti komentarą</div>
+<br />
+<label>Komentaras</label>
+<textarea name="post" id="post" rows="4" class="field span6" id="textarea" placeholder="Parašyk ką nors.."></textarea>
+</form>
+</td>
+</tr>
+</table>
+
+</div>
+
+
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                $(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                $(window).scrollLeft()) + "px");
+    return this;
+}
+
+$("#centered").center();
+
+$( window ).resize(function() {
+	$("#centered").center();
+});
+
+$("#post-submit").click( function(){
+	var nameMSG = 0;
+	var postMSG = 0;
+	var MSG = "";
+	if ($("#name").val() == ""){nameMSG = 1;}
+	if ($("#post").val() == ""){postMSG = 1;}
+	
+	if ((nameMSG == 0)&&(postMSG == 0)){writePost();}
+	else {
+		 if (nameMSG == 1) {MSG = MSG + "Neįvestas vardas \n";} 
+		 if (postMSG == 1) {MSG = MSG + "Nepateiktas komentaras \n";} 
+		 alert (MSG);
+	}	
+});
+
+
+function getPost(){
+	$.post( "getPost.php" ).done (function( data ) { 
+		var posts = jQuery.parseJSON( data );
+		
+		for(i = 0; i < posts['name'].length; i++)
+		{
+		$("#postTable").prepend("<tr>" + 
+		"<table><tr><td rowspan='2' valign='top'><h1><i class='glyphicon glyphicon-user'></i></h1></td>" +
+		"<td rowspan='2'>&nbsp;</td>" +
+		"<td>" + posts['name'][i] + "&nbsp;&nbsp;<span class='silver-text'>(" + posts['post_time'][i] + ")</span></td>" +
+		"<tr><td valign='top'>" + posts['post'][i] + "</td></tr>" +
+		"</tr></table>" +
+		"</tr>");
+		}
+	});
+}
+
+
+function writePost(){
+	
+	$.post( "writePost.php", $("#post-form").serialize() ).done (function( data ) { 
+		//alert(data);
+		$("#postTable").find("tr:not(:last)").remove();
+		getPost();
+		$("#name").val("");
+		$("#post").val("");
+	});
+}
+</script>
+
+
+
+</body>
+</html>
